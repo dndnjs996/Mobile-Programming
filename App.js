@@ -65,7 +65,7 @@ const App = () => {
     <>
       <View style={{ paddingTop: Constants.statusBarHeight}} />
       <View style={[styles.container, styles.playingSpace, hookedStyles]}>
-        
+        {squares.map(elem => elem)}
         <Text> hello </Text> 
         <Text> Who </Text>
         <Text> are </Text>
@@ -108,13 +108,13 @@ const App = () => {
           </View>
           <View style={styles.buttonView}>
             <Button title="ADD SQUARE"
-              onPress={() => console.log("press 6")                
+              onPress={() => setSquares([...squares, Square()])                
               }
             />
           </View>
           <View style={styles.buttonView}>
             <Button title="DELETE SQUARE"
-              onPress={() => console.log("press 7")                
+              onPress={() => setSquares(squares.filter((v,i) => i != squares.length -1))                
               }
             />
           </View>
