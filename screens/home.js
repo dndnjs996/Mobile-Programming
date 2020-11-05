@@ -5,12 +5,16 @@ function Home({navigation}) {
     return (
     <>
         <Image
-            source={require('../assets/frog-1371919.png')}
-            style={{width: 400, height:400}}
+            source={require('../assets/pexels-tomas-anunziata-695241.jpg')}
+            style={{width: 450, height:500}}
         />
         <Button
         title= "Go to Layout"
         onPress={() => navigation.navigate('Layout')}
+        />
+        <Button
+        title= "Go to Gallery"
+        onPress={() => navigation.navigate('Gallery')}
         />
     </>
     );
