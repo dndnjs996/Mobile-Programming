@@ -28,7 +28,7 @@ function MainStackNavigator() {
                 <Stack.Screen 
                     name = "Gallery"
                     component = {Gallery}
-                    options={{ title: 'Gallery Screen'}}
+                    options={{ title: 'gallery Screen'}}
                 />
 
             </Stack.Navigator>
