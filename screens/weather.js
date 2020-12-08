@@ -5,7 +5,7 @@ import Axios from 'axios';
 import Constants from 'expo-constants';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from "expo-linear-gradient";
-import PropTypes from "prop-types";
+
 
 
 
@@ -119,21 +119,7 @@ export default class Weather extends React.Component {
     };
 }
 
-Weather.propTypes = {
-    temp: PropTypes.number.isRequired,
-    condition: PropTypes.oneOf([
-        "Thunderstorm",
-        "Drizzle",
-        "Rain",
-        "Snow",
-        "Atmosphere",
-        "Clear",
-        "Clouds",
-        "Haze",
-        "Mist",
-        "Dust"
-    ]).isRequired
-};
+
 
 
 
