@@ -69,7 +69,8 @@ export default class Weather extends React.Component {
         console.log(data.main.temp_max);
         console.log(data.main.temp_min);
         console.log(data.weather[0].main);
-        this.setState({cond: data.weather[0].main, temp: data.main.temp});
+        this.setState({cond: data.weather[0].main, temp: data.main.temp, temp_max: data.main.temp_max, 
+            temp_min: data.main.temp_min, humidity: data.main.humidity, feels_like: data.main.feels_like});
 
     }
 
@@ -93,7 +94,7 @@ export default class Weather extends React.Component {
     }
 
     render() {
-        const {cond, temp} = this.state;
+        const {cond, temp, temp_max, temp_min, feels_like, humidity} = this.state;
         
         return (
             
@@ -104,13 +105,17 @@ export default class Weather extends React.Component {
             <View style={styles.container}>
                 <View style={styles.halfcontainer}>
                     <MaterialCommunityIcons name={weatherOptions[cond].iconName} size={256} color="black" />
-                    <Text style={styles.temptitle}>{temp}℃</Text>
+                    <Text style={styles.temptitle}>현재온도:{temp}℃</Text>
                     
                 </View>
-
-                <View style={styles.halfcontainer}>
-            
                     <Text style={styles.title}>{cond}</Text>
+                <View style={styles.halfcontainer}>
+                
+                <Text style={styles.temp_max}>최고온도:{temp_max}℃</Text>
+                    <Text style={styles.temp_min}>최저온도:{temp_min}℃</Text>
+                    <Text style={styles.feels_like}>체감온도:{feels_like}℃</Text>
+                    <Text style={styles.humidity}>습도:{humidity}%</Text>
+                    
                 </View>
             
             </View>
@@ -136,10 +141,22 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     temptitle: {
-        fontSize: 48,
+        fontSize: 38,
+    },
+    temp_max: {
+        fontSize:25
+    },
+    temp_min:{
+        fontSize:25
+    },
+    feels_like:{
+        fontSize:25
+    },
+    humidity:{
+        fontSize:25
     },
     title: {
-        fontSize:60,
+        fontSize:40,
         
     }
 })
